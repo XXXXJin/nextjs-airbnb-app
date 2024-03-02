@@ -10,10 +10,15 @@ import {
 } from "react-icons/md";
 export default function Navbar() {
   const pathName = usePathname();
+  const getPageName = (pathName: string) => {
+    const name = pathName.split("/").pop();
+    if (name === "dashboard") return "デジタルダッシュボード";
+  };
+  const pageName = getPageName(pathName);
 
   return (
     <div className="flex justify-between items-center p-4 bg-gray-900 rounded-md">
-      <p>{`${pathName.split("/").pop()} page`}</p>
+      <p>{pageName}</p>
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-3 bg-gray-800 p-2 rounded-md">
           <MdSearch />

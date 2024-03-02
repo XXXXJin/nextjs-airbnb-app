@@ -13,6 +13,7 @@ import {
   MdShoppingBag,
   MdSupervisedUserCircle,
   MdWork,
+  MdLogout,
 } from "react-icons/md";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
@@ -82,7 +83,6 @@ const menuItems = [
 
 export default function SideBar() {
   const pathName = usePathname();
-  console.log(pathName);
 
   return (
     <div className="p-6">
@@ -122,6 +122,17 @@ export default function SideBar() {
                   </Link>
                 );
               })}
+              {menuItem.title === "User" && (
+                <button
+                  key={index}
+                  className={clsx(
+                    "flex items-center gap-3 p-2 hover:bg-slate-800 rounded-md mt-1"
+                  )}
+                >
+                  <MdLogout />
+                  Logout
+                </button>
+              )}
             </li>
           );
         })}
