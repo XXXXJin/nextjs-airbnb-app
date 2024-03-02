@@ -5,8 +5,8 @@ import "./globals.css";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Airbnb clone",
-  description: "This is the Airbng clone project to practice nextjs",
+  title: "admin app",
+  description: "This is the admin app project to practice nextjs",
 };
 
 export default function RootLayout({
@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={nunito.className}>{children}</body>
+      <body className={`${nunito.className} bg-slate-950 text-gray-200`}>
+        {children}
+      </body>
     </html>
   );
 }
