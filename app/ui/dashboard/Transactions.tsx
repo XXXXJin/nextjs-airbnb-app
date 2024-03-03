@@ -54,7 +54,7 @@ export default function Transactions() {
             <th>注文額</th>
           </tr>
         </thead>
-        <tbody className="text-xs">
+        <tbody className="text-sm">
           {userDataArr.map((useData, index) => {
             return (
               <tr className="p-5" key={index}>

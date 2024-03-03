@@ -51,7 +51,7 @@ const data = [
 const Chart = () => {
   return (
     <div className="h-80 bg-gray-900 p-5">
-      <h2 className="mb-5 text-lg">毎週のまとめ</h2>
+      <h2 className="mb-5 text-lg">毎週統計情報</h2>
       <ResponsiveContainer width="100%" height="90%">
         <LineChart
           width={500}

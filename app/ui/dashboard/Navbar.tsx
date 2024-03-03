@@ -13,6 +13,8 @@ export default function Navbar() {
   const getPageName = (pathName: string) => {
     const name = pathName.split("/").pop();
     if (name === "dashboard") return "デジタルダッシュボード";
+    if (name === "users") return "ユーザー一覧";
+    if (name === "products") return "商品一覧";
   };
   const pageName = getPageName(pathName);
 
