@@ -12,7 +12,6 @@ export default function Button({
   size?: "small" | "medium" | "large";
   isDisabled?: boolean;
 }) {
-  console.log(color);
   return (
     <button
       disabled={isDisabled}

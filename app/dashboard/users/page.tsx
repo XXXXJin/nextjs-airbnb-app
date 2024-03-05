@@ -28,23 +28,23 @@ export default function Users() {
   return (
     <div className="bg-gray-900 mt-5 p-5 rounded-md">
       <div className="flex items-center justify-between">
-        <Search placeholder="Search for a user..." />
+        <Search placeholder="ユーザーを検索..." />
         <Link href="/dashboard/users/add">
           <Button color="violet" size="medium">
-            Add user
+            ユーザー追加
           </Button>
         </Link>
       </div>
-      <div className="text-left p-5">
-        <table className="w-full [&_th]:p-2 [&_td]:p-2">
-          <thead>
+      <div className="text-left py-5">
+        <table className="w-full [&_th]:p-2 [&_td]:p-2 [&_th]:min-w-24 [&_td]:max-w-32 [&_td]:truncate">
+          <thead className="text-xs">
             <tr>
-              <th>User</th>
-              <th>Email</th>
-              <th>Created at</th>
-              <th>Role</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>名前</th>
+              <th>メールアドレス</th>
+              <th>登録日</th>
+              <th>ユーザー種別</th>
+              <th>ステータス</th>
+              <th>アクション</th>
             </tr>
           </thead>
           <tbody className="text-sm">
@@ -59,7 +59,7 @@ export default function Users() {
                       alt="user image"
                       className="rounded-full"
                     />
-                    {useData.name}
+                    <span className="truncate"> {useData.name}</span>
                   </td>
                   <td>{useData.email}</td>
                   <td>{useData.created}</td>

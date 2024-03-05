@@ -26,7 +26,7 @@ export default function Navbar() {
           <MdSearch />
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="何かをお探しですか？"
             className="bg-transparent border-none focus:outline-none"
           />
         </div>

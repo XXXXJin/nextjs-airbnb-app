@@ -8,8 +8,8 @@ import React from "react";
 const productDataArr = [
   {
     image: "/noproduct.jpg",
-    title: "iphone",
-    description: "this is the newest virsion of iphone 15",
+    title: "iphone 123123123123123123",
+    description: "this is the newest virsion of iphone 15 123123123123123123",
     price: "2,000",
     created: "2023/10/30",
     stock: "20",
@@ -28,23 +28,23 @@ export default function Products() {
   return (
     <div className="bg-gray-900 mt-5 p-5 rounded-md">
       <div className="flex items-center justify-between">
-        <Search placeholder="Search for a product..." />
+        <Search placeholder="商品を検索..." />
         <Link href="/dashboard/products/add">
           <Button color="violet" size="medium">
-            Add product
+            商品追加
           </Button>
         </Link>
       </div>
-      <div className="text-left p-5">
-        <table className="w-full [&_th]:p-2 [&_td]:p-2">
-          <thead>
+      <div className="text-left py-5">
+        <table className="w-full [&_th]:p-2 [&_td]:p-2 [&_th]:min-w-24 [&_td]:max-w-32 [&_td]:truncate">
+          <thead className="text-xs">
             <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Created at</th>
-              <th>Stock</th>
-              <th>Action</th>
+              <th>商品名</th>
+              <th>商品詳細</th>
+              <th>値段</th>
+              <th>追加日</th>
+              <th>在庫品数</th>
+              <th></th>
             </tr>
           </thead>
           <tbody className="text-sm">
@@ -59,7 +59,7 @@ export default function Products() {
                       alt="user image"
                       className="rounded-full"
                     />
-                    {productData.title}
+                    <span className="truncate">{productData.title}</span>
                   </td>
                   <td>{productData.description}</td>
                   <td>{productData.price}</td>

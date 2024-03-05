@@ -7,11 +7,11 @@ export default function Pagination() {
     <div className="flex items-center justify-between">
       <Link href="">
         <Button color="gray" isDisabled={true}>
-          previous
+          前へ
         </Button>
       </Link>
       <Link href="">
-        <Button color="gray">next</Button>
+        <Button color="gray">次へ</Button>
       </Link>
     </div>
   );
