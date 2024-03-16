@@ -15,6 +15,8 @@ export default function Navbar() {
     if (name === "dashboard") return "デジタルダッシュボード";
     if (name === "users") return "ユーザー一覧";
     if (name === "products") return "商品一覧";
+    if (name === "addProducts") return "新規商品追加";
+    if (name === "addUsers") return "新規ユーザー追加";
   };
   const pageName = getPageName(pathName);
 

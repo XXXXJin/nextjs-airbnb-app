@@ -29,7 +29,7 @@ export default function Products() {
     <div className="bg-gray-900 mt-5 p-5 rounded-md">
       <div className="flex items-center justify-between">
         <Search placeholder="商品を検索..." />
-        <Link href="/dashboard/products/add">
+        <Link href="/dashboard/products/addProducts">
           <Button color="violet" size="medium">
             商品追加
           </Button>

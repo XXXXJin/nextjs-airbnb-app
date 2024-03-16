@@ -29,7 +29,7 @@ export default function Users() {
     <div className="bg-gray-900 mt-5 p-5 rounded-md">
       <div className="flex items-center justify-between">
         <Search placeholder="ユーザーを検索..." />
-        <Link href="/dashboard/users/add">
+        <Link href="/dashboard/users/addUsers">
           <Button color="violet" size="medium">
             ユーザー追加
           </Button>
