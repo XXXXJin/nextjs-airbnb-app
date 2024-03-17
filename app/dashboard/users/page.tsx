@@ -1,3 +1,4 @@
+import { fetchUser } from "@/app/lib/fetchData";
 import Button from "@/app/ui/Button";
 import Pagination from "@/app/ui/dashboard/Pagination";
 import Search from "@/app/ui/dashboard/Search";
@@ -24,7 +25,9 @@ const userDataArr = [
   },
 ];
 
-export default function Users() {
+export default async function Users() {
+  const users = await fetchUser();
+
   return (
     <div className="bg-gray-900 mt-5 p-5 rounded-md">
       <div className="flex items-center justify-between">
@@ -48,26 +51,26 @@ export default function Users() {
             </tr>
           </thead>
           <tbody className="text-sm">
-            {userDataArr.map((useData, index) => {
+            {users?.map((user) => {
               return (
-                <tr className="p-5" key={index}>
+                <tr className="p-5" key={user.id}>
                   <td className="flex items-center gap-3">
                     <Image
-                      src={useData.image}
+                      src={user.img || "/noavatar.png"}
                       width={40}
                       height={40}
                       alt="user image"
-                      className="rounded-full"
+                      className="rounded-full h-[40px]"
                     />
-                    <span className="truncate"> {useData.name}</span>
+                    <span className="truncate"> {user.username}</span>
                   </td>
-                  <td>{useData.email}</td>
-                  <td>{useData.created}</td>
-                  <td>{useData.role}</td>
-                  <td>{useData.action}</td>
+                  <td>{user.email}</td>
+                  <td>123</td>
+                  <td>{user.isAdmin ? "管理者" : "一般ユーザー"}</td>
+                  <td>{user.isActive ? "利用中" : "退会"}</td>
                   <td>
                     <div className="flex gap-2">
-                      <Link href="">
+                      <Link href={`/dashboard/users/${user.id}`}>
                         <Button color="green">view</Button>
                       </Link>
                       <Link href="">

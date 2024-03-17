@@ -126,7 +126,7 @@ export default function SideBar() {
                 <button
                   key={index}
                   className={clsx(
-                    "flex items-center gap-3 p-2 hover:bg-slate-800 rounded-md mt-1"
+                    "flex items-center gap-3 p-2 hover:bg-slate-800 rounded-md mt-1 w-full"
                   )}
                 >
                   <MdLogout />
