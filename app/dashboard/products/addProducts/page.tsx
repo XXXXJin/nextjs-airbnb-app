@@ -1,3 +1,4 @@
+import FormSelect from "@/app/ui/FormSelect";
 import FormInput from "@/app/ui/formInput";
 import React from "react";
 
@@ -16,20 +17,14 @@ export default function Add() {
             />
           </div>
           <div className="flex-1">
-            <label htmlFor="cat" className="block mb-2 text-sm font-medium ">
-              商品種別
-            </label>
-            <select
-              id="cat"
-              className="outline-none border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 "
-            >
+            <FormSelect title="商品種別">
               <option selected value="general">
                 カテゴリ選択してください。
               </option>
               <option value="kitchen">キッチン用品</option>
               <option value="phone">携帯</option>
               <option value="computer">パソコン</option>
-            </select>
+            </FormSelect>
           </div>
         </div>
         <div className="flex gap-5">

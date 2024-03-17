@@ -1,3 +1,4 @@
+import FormSelect from "@/app/ui/FormSelect";
 import FormInput from "@/app/ui/formInput";
 import React from "react";
 
@@ -45,34 +46,22 @@ export default function viewUser() {
         </div>
         <div className="flex gap-5">
           <div className="flex-1">
-            <label htmlFor="cat" className="block mb-2 text-sm font-medium ">
-              権限種別
-            </label>
-            <select
-              id="cat"
-              className="outline-none border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 "
-            >
+            <FormSelect title="権限種別">
               <option selected value="no">
                 管理者なのか？
               </option>
               <option value="yes">はい</option>
               <option value="no">いいえ</option>
-            </select>
+            </FormSelect>
           </div>
           <div className="flex-1">
-            <label htmlFor="cat" className="block mb-2 text-sm font-medium ">
-              ステータス
-            </label>
-            <select
-              id="cat"
-              className="outline-none border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 "
-            >
+            <FormSelect title="ステータス">
               <option selected value="yes">
                 アクティブなのか？
               </option>
               <option value="yes">はい</option>
               <option value="no">いいえ</option>
-            </select>
+            </FormSelect>
           </div>
         </div>
 
