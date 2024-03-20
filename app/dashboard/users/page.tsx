@@ -6,27 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const userDataArr = [
-  {
-    image: "/noavatar.png",
-    name: "jin",
-    email: "haixujin@hotmail.com",
-    created: "2023/10/30",
-    role: "client",
-    action: "passive",
-  },
-  {
-    image: "/noavatar.png",
-    name: "jin",
-    email: "haixujin@hotmail.com",
-    created: "2023/10/30",
-    role: "client",
-    action: "passive",
-  },
-];
-
-export default async function Users() {
-  const users = await fetchUser();
+export default async function Users({
+  searchParams,
+}: {
+  searchParams: { q: string };
+}) {
+  const query = searchParams.q || "";
+  const users = await fetchUser(query);
 
   return (
     <div className="bg-gray-900 mt-5 p-5 rounded-md">
