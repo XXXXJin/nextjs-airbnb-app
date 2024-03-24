@@ -20,12 +20,12 @@ export interface IUser extends Document {
 
 export interface IProduct extends Document {
   title: string;
-  type: string;
+  desc: string;
   price: number;
   stock: number;
+  img: string;
   color: string;
   size: string;
-  description: string;
 }
 
 const userSchema: Schema = new Schema(
@@ -75,7 +75,7 @@ const productSchema: Schema = new Schema(
       min: 3,
       max: 20,
     },
-    type: {
+    desc: {
       type: String,
       required: true,
     },
@@ -88,6 +88,9 @@ const productSchema: Schema = new Schema(
       type: Number,
       required: true,
       min: 0,
+    },
+    img: {
+      type: String,
     },
     color: {
       type: String,

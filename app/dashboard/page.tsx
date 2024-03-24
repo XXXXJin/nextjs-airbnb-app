@@ -2,7 +2,6 @@ import React from "react";
 import Card from "@/app/ui/dashboard/Card";
 import Transactions from "@/app/ui/dashboard/Transactions";
 import Chart from "@/app/ui/dashboard/Chart";
-import RightBar from "@/app/ui/dashboard/RightBar";
 
 export default function Dashboard() {
   return (

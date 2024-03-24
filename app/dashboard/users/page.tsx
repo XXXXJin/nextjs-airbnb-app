@@ -75,7 +75,7 @@ export default async function Users({
           </tbody>
         </table>
       </div>
-      <Pagination count={count} />
+      {count && <Pagination count={count} />}
     </div>
   );
 }

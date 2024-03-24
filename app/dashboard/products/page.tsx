@@ -1,3 +1,4 @@
+import { fetchProduct } from "@/app/lib/fetchData";
 import Button from "@/app/ui/Button";
 import Pagination from "@/app/ui/dashboard/Pagination";
 import Search from "@/app/ui/dashboard/Search";
@@ -5,26 +6,21 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const productDataArr = [
-  {
-    image: "/noproduct.jpg",
-    title: "iphone 123123123123123123",
-    description: "this is the newest virsion of iphone 15 123123123123123123",
-    price: "2,000",
-    created: "2023/10/30",
-    stock: "20",
-  },
-  {
-    image: "/noproduct.jpg",
-    title: "table",
-    description: "created by the most famous artist",
-    price: "5,000",
-    created: "2023/10/30",
-    stock: "40",
-  },
-];
-
-export default function Products() {
+export default async function Products({
+  searchParams,
+}: {
+  searchParams: {
+    q: string;
+    page: string;
+  };
+}) {
+  // 検索ワード
+  const query = searchParams.q || "";
+  // ページ数
+  const page = searchParams.page || "1";
+  const fetchedData = await fetchProduct(query, page);
+  const product = fetchedData?.product;
+  const count = fetchedData?.count;
   return (
     <div className="bg-gray-900 mt-5 p-5 rounded-md">
       <div className="flex items-center justify-between">
@@ -44,16 +40,16 @@ export default function Products() {
               <th>値段</th>
               <th>追加日</th>
               <th>在庫品数</th>
-              <th></th>
+              <th>action</th>
             </tr>
           </thead>
           <tbody className="text-sm">
-            {productDataArr.map((productData, index) => {
+            {product?.map((productData) => {
               return (
-                <tr className="p-5" key={index}>
+                <tr className="p-5" key={productData.id}>
                   <td className="flex items-center gap-3">
                     <Image
-                      src={productData.image}
+                      src={productData.img || "/noproduct.jpg"}
                       width={40}
                       height={40}
                       alt="user image"
@@ -61,13 +57,14 @@ export default function Products() {
                     />
                     <span className="truncate">{productData.title}</span>
                   </td>
-                  <td>{productData.description}</td>
+                  <td>{productData.desc}</td>
                   <td>{productData.price}</td>
-                  <td>{productData.created}</td>
+                  {/* <td>{productData.createdAt.toString().splice(4, 16)}</td> */}
+                  <td>2022.15.12</td>
                   <td>{productData.stock}</td>
                   <td>
                     <div className="flex gap-2">
-                      <Link href="">
+                      <Link href={`/dashboard/products/${productData.id}`}>
                         <Button color="green">view</Button>
                       </Link>
                       <Link href="">
@@ -81,7 +78,7 @@ export default function Products() {
           </tbody>
         </table>
       </div>
-      <Pagination />
+      {count && <Pagination count={count} />}
     </div>
   );
 }

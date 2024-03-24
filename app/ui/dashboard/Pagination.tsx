@@ -3,7 +3,7 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import React from "react";
 import Button from "../Button";
 
-export default function Pagination({ count }: { count: number }) {
+export default function Pagination({ count = 0 }: { count?: number }) {
   const searchParams = useSearchParams();
   const pathName = usePathname();
   const { replace } = useRouter();
