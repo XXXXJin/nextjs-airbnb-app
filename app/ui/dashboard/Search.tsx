@@ -12,6 +12,8 @@ export default function Search({ placeholder }: { placeholder: string }) {
   const handleSearch = useDebouncedCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const params = new URLSearchParams(searchParams.toString());
+      // 検索結果の最初のページに遷移させる
+      params.set("page", "1");
       if (e.target.value) {
         params.set("q", e.target.value);
       } else {

@@ -9,10 +9,15 @@ import React from "react";
 export default async function Users({
   searchParams,
 }: {
-  searchParams: { q: string };
+  searchParams: { q: string; page: string };
 }) {
+  // 検索ワード
   const query = searchParams.q || "";
-  const users = await fetchUser(query);
+  // ページ数
+  const page = searchParams.page || "1";
+  const fetchedData = await fetchUser(query, page);
+  const users = fetchedData?.users;
+  const count = fetchedData?.count;
 
   return (
     <div className="bg-gray-900 mt-5 p-5 rounded-md">
@@ -70,7 +75,7 @@ export default async function Users({
           </tbody>
         </table>
       </div>
-      <Pagination />
+      <Pagination count={count} />
     </div>
   );
 }
