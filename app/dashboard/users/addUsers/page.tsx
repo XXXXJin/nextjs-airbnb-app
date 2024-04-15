@@ -1,3 +1,4 @@
+import { addUser } from "@/app/lib/actions";
 import FormSelect from "@/app/ui/FormSelect";
 import FormInput from "@/app/ui/formInput";
 import React from "react";
@@ -5,7 +6,7 @@ import React from "react";
 export default function Add() {
   return (
     <div className="p-5 bg-gray-900 rounded-md mt-5">
-      <form action="" className="flex gap-5 flex-col">
+      <form action={addUser} className="flex gap-5 flex-col">
         <div className="flex gap-5">
           <div className="flex-1">
             <FormInput
@@ -14,6 +15,7 @@ export default function Add() {
               title="ユーザー名"
               placeholder="ユーザー名を入力してください。"
               isRequired={true}
+              name="username"
             />
           </div>
           <div className="flex-1">
@@ -23,6 +25,7 @@ export default function Add() {
               title="メールアドレス"
               placeholder="メールアドレスを入力してください。"
               isRequired={true}
+              name="email"
             />
           </div>
         </div>
@@ -33,6 +36,8 @@ export default function Add() {
               forValue="password"
               title="パスワード"
               placeholder="パスワードを入力してください。"
+              isRequired={true}
+              name="password"
             />
           </div>
           <div className="flex-1">
@@ -41,24 +46,21 @@ export default function Add() {
               forValue="phone"
               title="電話番号"
               placeholder="電話番号を入力してください。"
+              name="phone"
             />
           </div>
         </div>
         <div className="flex gap-5">
           <div className="flex-1">
             <FormSelect title="権限種別">
-              <option selected value="no">
-                管理者なのか？
-              </option>
+              <option value="no">管理者なのか？</option>
               <option value="yes">はい</option>
               <option value="no">いいえ</option>
             </FormSelect>
           </div>
           <div className="flex-1">
             <FormSelect title="ステータス">
-              <option selected value="yes">
-                アクティブなのか？
-              </option>
+              <option value="yes">アクティブなのか？</option>
               <option value="yes">はい</option>
               <option value="no">いいえ</option>
             </FormSelect>
@@ -70,6 +72,7 @@ export default function Add() {
           forValue="address"
           title="住所"
           placeholder="住所を入力してください。"
+          name="address"
         />
         <button
           type="submit"

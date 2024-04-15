@@ -16,6 +16,8 @@ export interface IUser extends Document {
   img: string;
   isAdmin: boolean;
   isActive: boolean;
+  createdAt: Date;
+  updateAt: Date;
 }
 
 export interface IProduct extends Document {
@@ -26,6 +28,8 @@ export interface IProduct extends Document {
   img: string;
   color: string;
   size: string;
+  createdAt: Date;
+  updateAt: Date;
 }
 
 const userSchema: Schema = new Schema(
