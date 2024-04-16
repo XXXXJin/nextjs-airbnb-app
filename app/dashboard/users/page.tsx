@@ -1,5 +1,5 @@
 import { deleteUser } from "@/app/lib/actions";
-import { fetchUser } from "@/app/lib/fetchData";
+import { fetchUsers } from "@/app/lib/fetchData";
 import Button from "@/app/ui/Button";
 import Pagination from "@/app/ui/dashboard/Pagination";
 import Search from "@/app/ui/dashboard/Search";
@@ -16,7 +16,7 @@ export default async function Users({
   const query = searchParams.q || "";
   // ページ数
   const page = searchParams.page || "1";
-  const fetchedData = await fetchUser(query, page);
+  const fetchedData = await fetchUsers(query, page);
   const users = fetchedData?.users;
   const count = fetchedData?.count;
 

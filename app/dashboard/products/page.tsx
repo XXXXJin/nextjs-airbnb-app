@@ -1,5 +1,5 @@
 import { deleteProduct } from "@/app/lib/actions";
-import { fetchProduct } from "@/app/lib/fetchData";
+import { fetchProducts } from "@/app/lib/fetchData";
 import Button from "@/app/ui/Button";
 import Pagination from "@/app/ui/dashboard/Pagination";
 import Search from "@/app/ui/dashboard/Search";
@@ -19,7 +19,7 @@ export default async function Products({
   const query = searchParams.q || "";
   // ページ数
   const page = searchParams.page || "1";
-  const fetchedData = await fetchProduct(query, page);
+  const fetchedData = await fetchProducts(query, page);
   const product = fetchedData?.product;
   const count = fetchedData?.count;
   return (
