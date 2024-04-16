@@ -1,10 +1,10 @@
+import { ITEM_PER_PAGE } from "../const";
 import { User, Product } from "./models";
 import { connectToDB } from "./utils";
 
 // ユーザー情報を取得する
 export const fetchUser = async (query: string, page: string) => {
   const queryRegex = new RegExp(query, "i");
-  const ITEM_PER_PAGE: number = 2;
 
   try {
     connectToDB();
@@ -21,7 +21,6 @@ export const fetchUser = async (query: string, page: string) => {
 //　商品情報を取得する
 export const fetchProduct = async (query: string, page: string) => {
   const queryRegex = new RegExp(query, "i");
-  const ITEM_PER_PAGE: number = 2;
 
   try {
     connectToDB();

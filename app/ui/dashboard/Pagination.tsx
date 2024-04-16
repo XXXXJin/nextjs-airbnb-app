@@ -2,6 +2,7 @@
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import React from "react";
 import Button from "../Button";
+import { ITEM_PER_PAGE } from "@/app/const";
 
 export default function Pagination({ count = 0 }: { count?: number }) {
   const searchParams = useSearchParams();
@@ -10,7 +11,6 @@ export default function Pagination({ count = 0 }: { count?: number }) {
 
   const params = new URLSearchParams(searchParams.toString());
   const page = searchParams.get("page") || "1";
-  const ITEM_PER_PAGE = 1;
 
   const hasPrevPage = parseInt(page) !== 1;
   const hasNextPage = parseInt(page) * ITEM_PER_PAGE < count;

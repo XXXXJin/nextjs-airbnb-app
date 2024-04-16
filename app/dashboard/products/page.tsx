@@ -1,3 +1,4 @@
+import { deleteProduct } from "@/app/lib/actions";
 import { fetchProduct } from "@/app/lib/fetchData";
 import Button from "@/app/ui/Button";
 import Pagination from "@/app/ui/dashboard/Pagination";
@@ -67,9 +68,10 @@ export default async function Products({
                       <Link href={`/dashboard/products/${productData.id}`}>
                         <Button color="green">view</Button>
                       </Link>
-                      <Link href="">
+                      <form action={deleteProduct}>
+                        <input type="hidden" name="id" value={productData.id} />
                         <Button color="red">delete</Button>
-                      </Link>
+                      </form>
                     </div>
                   </td>
                 </tr>
