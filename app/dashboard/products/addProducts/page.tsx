@@ -1,3 +1,4 @@
+import { addProduct } from "@/app/lib/actions";
 import FormSelect from "@/app/ui/FormSelect";
 import FormInput from "@/app/ui/formInput";
 import React from "react";
@@ -5,7 +6,7 @@ import React from "react";
 export default function Add() {
   return (
     <div className="p-5 bg-gray-900 rounded-md mt-5">
-      <form action="" className="flex gap-5 flex-col">
+      <form action={addProduct} className="flex gap-5 flex-col">
         <div className="flex gap-5">
           <div className="flex-1">
             <FormInput
@@ -14,6 +15,7 @@ export default function Add() {
               title="商品名"
               placeholder="商品名を入力してください。"
               isRequired={true}
+              name="title"
             />
           </div>
           <div className="flex-1">
@@ -34,6 +36,7 @@ export default function Add() {
               forValue="price"
               title="値段"
               placeholder="値段を入力してください。"
+              name="price"
             />
           </div>
           <div className="flex-1">
@@ -42,6 +45,7 @@ export default function Add() {
               forValue="stock"
               title="在庫品数"
               placeholder="在庫品数を入力してください。"
+              name="stock"
             />
           </div>
         </div>
@@ -51,6 +55,7 @@ export default function Add() {
               forValue="color"
               title="色"
               placeholder="色を入力してください。"
+              name="color"
             />
           </div>
           <div className="flex-1">
@@ -58,6 +63,7 @@ export default function Add() {
               forValue="size"
               title="サイズ"
               placeholder="サイズを入力してください。"
+              name="size"
             />
           </div>
         </div>
@@ -70,6 +76,7 @@ export default function Add() {
           rows={4}
           className="outline-none border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 "
           placeholder="商品詳細を入力してください。"
+          name="desc"
         ></textarea>
         <div></div>
         <button
