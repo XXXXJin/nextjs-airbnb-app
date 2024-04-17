@@ -16,17 +16,8 @@ export default function viewProduct({ params }: { params: { id: string } }) {
               title="商品名"
               placeholder="商品名を入力してください。"
               isRequired={true}
+              name="title"
             />
-          </div>
-          <div className="flex-1">
-            <FormSelect title="商品種別">
-              <option selected value="general">
-                カテゴリ選択してください。
-              </option>
-              <option value="kitchen">キッチン用品</option>
-              <option value="phone">携帯</option>
-              <option value="computer">パソコン</option>
-            </FormSelect>
           </div>
         </div>
         <div className="flex gap-5">
@@ -36,6 +27,7 @@ export default function viewProduct({ params }: { params: { id: string } }) {
               forValue="price"
               title="値段"
               placeholder="値段を入力してください。"
+              name="price"
             />
           </div>
           <div className="flex-1">
@@ -44,6 +36,7 @@ export default function viewProduct({ params }: { params: { id: string } }) {
               forValue="stock"
               title="在庫品数"
               placeholder="在庫品数を入力してください。"
+              name="stock"
             />
           </div>
         </div>
@@ -53,6 +46,7 @@ export default function viewProduct({ params }: { params: { id: string } }) {
               forValue="color"
               title="色"
               placeholder="色を入力してください。"
+              name="color"
             />
           </div>
           <div className="flex-1">
@@ -60,6 +54,7 @@ export default function viewProduct({ params }: { params: { id: string } }) {
               forValue="size"
               title="サイズ"
               placeholder="サイズを入力してください。"
+              name="size"
             />
           </div>
         </div>

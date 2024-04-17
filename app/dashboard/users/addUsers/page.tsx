@@ -52,15 +52,15 @@ export default function Add() {
         </div>
         <div className="flex gap-5">
           <div className="flex-1">
-            <FormSelect title="権限種別">
+            <FormSelect title="権限種別" name="isAdmin">
               <option value="no">管理者なのか？</option>
               <option value="yes">はい</option>
               <option value="no">いいえ</option>
             </FormSelect>
           </div>
           <div className="flex-1">
-            <FormSelect title="ステータス">
-              <option value="yes">アクティブなのか？</option>
+            <FormSelect title="ステータス" name="isActive">
+              <option value="no">アクティブなのか？</option>
               <option value="yes">はい</option>
               <option value="no">いいえ</option>
             </FormSelect>

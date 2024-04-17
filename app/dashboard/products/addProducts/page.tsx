@@ -18,16 +18,6 @@ export default function Add() {
               name="title"
             />
           </div>
-          <div className="flex-1">
-            <FormSelect title="商品種別">
-              <option selected value="general">
-                カテゴリ選択してください。
-              </option>
-              <option value="kitchen">キッチン用品</option>
-              <option value="phone">携帯</option>
-              <option value="computer">パソコン</option>
-            </FormSelect>
-          </div>
         </div>
         <div className="flex gap-5">
           <div className="flex-1">

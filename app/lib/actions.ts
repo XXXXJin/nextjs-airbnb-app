@@ -19,8 +19,8 @@ export const addUser = async (formData: FormData) => {
       password: hashdedPassword,
       phone,
       address,
-      isAdmin,
-      isActive,
+      isAdmin: isAdmin === "yes",
+      isActive: isActive === "yes",
     });
 
     await newUser.save();

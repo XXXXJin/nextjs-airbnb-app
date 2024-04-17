@@ -14,6 +14,7 @@ export default function viewUser() {
               title="ユーザー名"
               placeholder="ユーザー名を入力してください。"
               isRequired={true}
+              name="username"
             />
           </div>
           <div className="flex-1">
@@ -23,6 +24,7 @@ export default function viewUser() {
               title="メールアドレス"
               placeholder="メールアドレスを入力してください。"
               isRequired={true}
+              name="email"
             />
           </div>
         </div>
@@ -33,6 +35,7 @@ export default function viewUser() {
               forValue="password"
               title="パスワード"
               placeholder="パスワードを入力してください。"
+              name="password"
             />
           </div>
           <div className="flex-1">
@@ -41,12 +44,13 @@ export default function viewUser() {
               forValue="phone"
               title="電話番号"
               placeholder="電話番号を入力してください。"
+              name="phone"
             />
           </div>
         </div>
         <div className="flex gap-5">
           <div className="flex-1">
-            <FormSelect title="権限種別">
+            <FormSelect title="権限種別" name="isAdmin">
               <option selected value="no">
                 管理者なのか？
               </option>
@@ -55,7 +59,7 @@ export default function viewUser() {
             </FormSelect>
           </div>
           <div className="flex-1">
-            <FormSelect title="ステータス">
+            <FormSelect title="ステータス" name="isActive">
               <option selected value="yes">
                 アクティブなのか？
               </option>
@@ -70,6 +74,7 @@ export default function viewUser() {
           forValue="address"
           title="住所"
           placeholder="住所を入力してください。"
+          name="address"
         />
         <button
           type="submit"
